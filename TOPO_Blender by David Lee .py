@@ -68,11 +68,8 @@ class FbxImporter:
             # Smart UV project
             bpy.ops.object.select_all(action='DESELECT')
             low_obj.select_set(True)
-            bpy.ops.object.mode_set(mode='EDIT')
-            bpy.ops.mesh.select_all(action='SELECT')
-            bpy.context.area.type = 'UV_EDITOR'
-            bpy.ops.uv.unwrap(method='ANGLE_BASED', margin=0.001)             
-            #bpy.ops.uv.smart_project(angle_limit=66, island_margin=0,correct_aspect=True)
+            bpy.ops.object.mode_set(mode='EDIT')                       
+            bpy.ops.uv.smart_project(angle_limit=66, island_margin=0,correct_aspect=True)
             bpy.ops.uv.select_all(action='SELECT') 
             bpy.ops.uv.smart_project(angle_limit=66, island_margin=0,correct_aspect=True)           
             bpy.ops.object.mode_set(mode='OBJECT')
